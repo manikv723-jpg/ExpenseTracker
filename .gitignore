@@ -1,0 +1,14 @@
+# local data: the database, stored screenshots and the drop folder
+data/
+shots/
+inbox/*
+!inbox/.gitkeep
+
+# compiled OCR helper (build with: swiftc -O -o bin/vision-ocr ocr/ocr.swift)
+bin/vision-ocr
+
+# macOS / tooling
+.DS_Store
+.claude/
+node_modules/
+*.log

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Usage: ./bin/add screenshot1.png screenshot2.png ...
+DIR="$(cd "$(dirname "$0")/.." && pwd)/inbox"
+for f in "$@"; do cp "$f" "$DIR/" && echo "queued: $(basename "$f")"; done

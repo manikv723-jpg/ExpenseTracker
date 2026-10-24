@@ -1,0 +1,9 @@
+#!/bin/bash
+# Wipe every logged expense and stored screenshot. Asks first.
+cd "$(dirname "$0")/.."
+read -p "Delete ALL expenses and stored screenshots? [y/N] " a
+[[ "$a" == "y" || "$a" == "Y" ]] || { echo "cancelled"; exit 0; }
+rm -f data/expenses.db data/expenses.db-wal data/expenses.db-shm
+rm -rf shots/* inbox/*
+mkdir -p shots/thumbs
+echo "cleared. restart with ./run.sh"
